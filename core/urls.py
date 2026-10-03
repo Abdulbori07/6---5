@@ -11,8 +11,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(urlpatterns_yasg)),
     path("ckeditor5/", include('django_ckeditor_5.urls')),
+    path("api/v1/", include("apps.testapp.urls")),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += (
@@ -23,3 +23,6 @@ else:
     urlpatterns += [
         re_path(r'^back_media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     ]
+
+
+    
